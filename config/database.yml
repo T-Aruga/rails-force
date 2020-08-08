@@ -84,5 +84,5 @@ test:
 production:
   <<: *default
   database: rails_force_production
-  username: rails_force
+  username: postgres
   password: <%= ENV['RAILS_FORCE_DATABASE_PASSWORD'] %>
