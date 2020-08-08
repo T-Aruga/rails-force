@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include ErrorHandlers if Rails.env.production?
   layout :set_layout
 
   private def set_layout
