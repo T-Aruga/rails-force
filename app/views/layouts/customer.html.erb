@@ -7,15 +7,12 @@
 
     <%= stylesheet_link_tag 'customer', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
-  <div id="wrapper">
     <%= render "customer/shared/header" %>
-    <div id="container">
-        <%= yield %>
-    </div>
-    <%= render "shared/footer" %>
-  </div>
+    <%= render 'shared/flash' %>
+    <%= yield %>
   </body>
 </html>

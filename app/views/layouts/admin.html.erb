@@ -10,12 +10,8 @@
   </head>
 
   <body>
-  <div id="wrapper">
     <%= render "admin/shared/header" %>
-    <div id="container">
-        <%= yield %>
-    </div>
-    <%= render "shared/footer" %>
-  </div>
+    <%= render 'shared/flash' %>
+    <%= yield %>
   </body>
 </html>
