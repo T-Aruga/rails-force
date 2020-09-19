@@ -5,14 +5,17 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'staff', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= stylesheet_link_tag "staff", media: "all", "data-turbolinks-track": "reload" %>
+    <%= javascript_pack_tag "staff", "data-turbolinks-track": "reload" %>
   </head>
 
   <body>
-    <%= render "staff/shared/header" %>
-    <%= render 'shared/flash' %>
-    <%= yield %>
+    <div id="wrapper">
+      <%= render "staff/shared/header" %>
+      <div id="container">
+        <%= yield %>
+      </div>
+      <%= render "shared/footer" %>
+    </div>
   </body>
 </html>

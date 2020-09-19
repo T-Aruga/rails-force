@@ -1,33 +1,19 @@
 <% @title = "ログイン" %>
 
-<section class="hero is-primary is-fullheight">
-  <div class="hero-body">
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column is-6-table is-6-desktop is-6-widescreen">
-          <div class="box">
+<div id="login-form">
+  <h1><%= @title %></h1>
 
-            <div class="field has-text-centered">
-              <strong>Log in</strong>
-            </div>
-
-            <%= form_with class: "box", model: @form, url: :staff_session do |f| %>
-              <div class="field">
-                <%= f.label :email, class: "label" %>
-                <%= f.text_field :email, class: "input" %>
-              </div>
-              <div class="field">
-                <%= f.label :password, class: "label" %>
-                <%= f.password_field :password, class: "input" %>
-              </div>
-              <div class="field">
-                <%= f.submit "Log in", class: "button is-info is-fullwidth m-t-10 m-b-10" %>
-              </div>
-            <% end %>
-
-          </div>
-        </div>
-      </div>
+  <%= form_with model: @form, url: :staff_session do |f| %>
+    <div>
+      <%= f.label :email, "メールアドレス" %>
+      <%= f.text_field :email %>
     </div>
-  </div>
-</section>
+    <div>
+      <%= f.label :password, "パスワード" %>
+      <%= f.password_field :password %>
+    </div>
+    <div>
+      <%= f.submit "ログイン" %>
+    </div>
+  <% end %>
+</div>

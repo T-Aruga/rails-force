@@ -2,5 +2,3 @@
  *= require_tree ./shared
  *= require_tree ./customer
  */
- @import "noty/lib/noty";
- @import "noty/lib/themes/sunset";
