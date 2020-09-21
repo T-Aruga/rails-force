@@ -3,9 +3,9 @@ module ApplicationHelper
 
   def document_title
     if @title.present?
-      "#{@title} - RailsForce"
+      "#{@title} - Baukis2"
     else
-      "RailsForce"
+      "Baukis2"
     end
   end
 end
