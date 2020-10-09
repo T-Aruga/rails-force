@@ -6,7 +6,7 @@ class Staff::CustomerSearchForm
     :birth_year, :birth_month, :birth_mday,
     :address_type, :prefecture, :city, :phone_number,
     :gender, :postal_code, :last_four_digits_of_phone_number
-
+      
   def search
     normalize_values
 
@@ -15,11 +15,11 @@ class Staff::CustomerSearchForm
     if family_name_kana.present?
       rel = rel.where(family_name_kana: family_name_kana)
     end
-
+    
     if given_name_kana.present?
       rel = rel.where(given_name_kana: given_name_kana)
     end
-
+    
     rel = rel.where(birth_year: birth_year) if birth_year.present?
     rel = rel.where(birth_month: birth_month) if birth_month.present?
     rel = rel.where(birth_mday: birth_mday) if birth_mday.present?
@@ -36,7 +36,7 @@ class Staff::CustomerSearchForm
       else
         raise
       end
-
+      
       if prefecture.present?
         rel = rel.where("addresses.prefecture" => prefecture)
       end
@@ -68,9 +68,9 @@ class Staff::CustomerSearchForm
         .where("RIGHT(phones.number_for_index, 4) = ?",
           last_four_digits_of_phone_number)
     end
-
+    
     rel = rel.distinct
-
+    
     rel.order(:family_name_kana, :given_name_kana)
   end
 
@@ -83,5 +83,5 @@ class Staff::CustomerSearchForm
     self.postal_code = normalize_as_postal_code(postal_code)
     self.last_four_digits_of_phone_number =
       normalize_as_phone_number(last_four_digits_of_phone_number)
-  end
+  end  
 end

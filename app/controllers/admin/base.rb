@@ -16,7 +16,7 @@ class Admin::Base < ApplicationController
   private def check_source_ip_address
     raise IpAddressRejected unless AllowedSource.include?("admin", request.ip)
   end
-
+  
   private def authorize
     unless current_administrator
       flash.alert = "管理者としてログインしてください。"

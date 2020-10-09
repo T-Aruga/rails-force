@@ -16,7 +16,7 @@ class Staff::Base < ApplicationController
   private def check_source_ip_address
     raise IpAddressRejected unless AllowedSource.include?("staff", request.ip)
   end
-
+  
   private def authorize
     unless current_staff_member
       flash.alert = "職員としてログインしてください。"
