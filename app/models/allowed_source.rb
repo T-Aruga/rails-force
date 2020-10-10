@@ -47,7 +47,7 @@ class AllowedSource < ApplicationRecord
 
   class << self
     def include?(namespace, ip_address)
-      return true if !Rails.application.config.baukis2[:restrict_ip_addresses]
+      return true if !Rails.application.config.railsforce[:restrict_ip_addresses]
 
       octets = ip_address.split(".")
 
